@@ -1,0 +1,7 @@
+node_modules
+cypress/reports/assets/
+cypress/screenshots/
+allure-report/
+allure-results/
+downloads/
+public/

@@ -1,0 +1,26 @@
+export const ConfiguracoesElements = {
+
+  btnConfiguracoes: '[data-test="botao-menu-configurações"]',
+  btnEditarModelos: '[data-test="botao-modelos-documentos"]',
+  btnCriarModelo: '[data-test="botao-criar-modelo"]',
+  descricaoTexto: '[data-test="editor-texto-descricao"]',
+  nomeModelo: '[data-test="input-text-nome-modelo"]',
+  btnVizualizarModelo: '[data-test="botao-visualizar-modelo"]',
+  btnConfimar: '[data-test="confirmar-botao"]',
+  btnExcluir: '[data-test="cancelar-botao"]',
+  btnVisualizarTemplate: '[data-test="botao-visualizar-template"]',
+  btnFecharModalVisualizacao: '[data-test="botao-fechar-dialogo"]',
+  btnHierarquiaOrgaos: '[data-test="botao-hierarquia-orgaos"]',
+  selecaoTribunal: '[data-test="autocomplete-tribunal"]',
+  btnImportarOrgaos: 'mat-icon[data-mat-icon-type="font"]',
+  btnImportarMagistrados: '.mat-secondary mat-icon',
+  btnSalvarConfiguracoes: '[data-test="botao-salvar-configuracoes"]',
+  listaColegiados: '.card-list-item-row',
+  checkAtivo: '.mdc-checkbox',
+  btnAtualizarLista: '[data-test="botao-atualizar-lista"]',
+  selecionarTribunal: '[data-test="autocomplete-tribunal"]',
+  checkboxColegiado: '[data-test="checkbox-colegiado"]',
+  btnExcluirOrgaoJulgador: '[data-test="btn-excluir-orgao-julgador"]',
+  selecionarMagistrado: '[placeholder="Selecione o magistrado"]',
+  btnAdcionarIntegrante: '[data-test="botao-confirmar"]'
+}

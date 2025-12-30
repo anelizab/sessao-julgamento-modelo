@@ -1,0 +1,28 @@
+{
+  "secretarioUser" : "03446723013", 
+  "secretarioPw" : "Sj123456_",
+
+  "assessorUserRelator":"01126854042",
+  "assessorPwRelator":"Sj123456_",
+
+  "assessorUserVogal1":"07361819460",
+  "assessorPwVogal1":"Sj123456_",
+
+  "assessorUserVogal2":"06154672101",
+  "assessorPwVogal2":"Sj123456_",
+
+  "magistradoUserRelator": "88598616087", 
+  "magistradoPwRelator": "Sj123456_",
+
+  "magistradoUserVogal1": "42367606811", 
+  "magistradoPwVogal1": "Sj123456_",
+
+  "magistradoUserVogal2": "40957392826", 
+  "magistradoPwVogal2": "Sj123456_",
+
+  "administradorUserTrf3": "42750489890", 
+  "administradorPwTrf3": "Sj123456_",
+
+  "administradorUserCnj": "03942886537", 
+  "administradorPwCnj": "Sj123456_"
+}

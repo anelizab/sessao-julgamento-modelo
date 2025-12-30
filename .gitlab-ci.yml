@@ -1,0 +1,66 @@
+stages:
+  - test
+  - deploy
+  - cleanup
+
+variables:
+  # Diretório de relatórios Allure baseado no timestamp do commit
+  ALLURE_REPORT_DIR: "public/reports/${CI_COMMIT_TIMESTAMP:0:10}"
+  NODE_OPTIONS: "--max-old-space-size=4096"   # 🔥 aumenta limite de memória do Node
+
+test-e2e-sessao-julgamento:
+  image: cypress/browsers:node-22.19.0-chrome-140.0.7339.127-1-ff-142.0.1-edge-140.0.3485.54-1
+  stage: test
+  timeout: 3h
+
+  before_script:
+    # tenta instalar java, mas não falha se repo estiver indisponível
+    - apt-get update && apt-get install -y default-jre-headless || true
+    - export JAVA_HOME=/usr/lib/jvm/default-java
+    # garante que rimraf esteja disponível no runner
+    - npm install rimraf --save-dev
+
+  script:
+    - npm ci
+    - npm install allure-commandline --save-dev
+    # limpa relatórios antigos, mas não falha se pastas não existirem
+    - npm run test:allure:ordem || true
+    # garante que os diretórios existam antes de gerar os relatórios
+    - mkdir -p allure-results
+    - mkdir -p "$ALLURE_REPORT_DIR"
+    - npx allure generate allure-results -o "$ALLURE_REPORT_DIR" || echo "⚠️ Nenhum resultado Allure gerado"
+
+  artifacts:
+    when: always
+    paths:
+      - public/
+    expire_in: 60 days
+
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: on_success
+    - when: never
+
+pages:
+  stage: deploy
+  script:
+    - echo "Publicando relatórios Allure no GitLab Pages"
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $CI_COMMIT_BRANCH == "master"'
+      when: on_success
+    - when: never
+
+limpar-relatorios-antigos:
+  image: alpine:latest
+  stage: cleanup
+  before_script:
+    - apk add --no-cache findutils
+  script:
+    - echo "Removendo relatórios com mais de 60 dias"
+    - find public/reports -type d -mtime +60 -exec rm -rf {} +
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $CI_COMMIT_BRANCH == "master"'
+      when: always

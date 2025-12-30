@@ -1,0 +1,23 @@
+export const ComposicaoElements = {
+  btnContinuar: '[data-test="botao-continuar-pautar-sessao"]',
+  btnAdicionarOrgaoJulgadores: '[data-test="botao-adicionar-orgaos-julgadores"]',
+  btnExcluirOrgaoJulgadores: '[data-test="botao-excluir-orgao-julgador"]',
+  alterarComposicao: '[data-test="botao-alterar-composicao"]',
+  avatarMagistrado: '#avatar-magistrado',
+  descricaoOrgaoJugadorRepresentante: '.tipo-informacao.color-neutral-50',
+  nomeMagistrado: '.nome-magistrado',
+  limparRepresentante: '[data-test="botao-limpar-autocomplete-Representante"]',
+  tituloModal: '.dialog-header',
+  tituloModalConfirmacao: '.dialog-header',
+  opcaoPropagarNao: '.mat-mdc-radio-button.mat-accent',
+  opcaoAplicarAlteração: '.mdc-radio',
+  btnRemoverDaComposicao: '[data-test="botao-remover-orgao-julgador"]',
+  btnAdicionarAlterarComposicao: '[data-test="botao-adicionar-composicao"]',
+  btnCancelarConfirmacao: '[data-test="botao-cancelar"]',
+  campoColegiado: '[datatest="input-select-colegiado"]',
+  campoOrgaoJulgador: '[datatest="input-select-orgao-julgador"]',
+  campoRepresentante: '[datatest="input-select-representante"]',
+  opcoesAplicarProcessosPautados: '.mdc-radio__native-control',
+  contadorProcessoIndividual: '.processos-pautados-quantidade.ng-star-inserted',
+  campoSelecaoOrgaoJulgador: '[formcontrolname="orgaoJulgador"]'
+}

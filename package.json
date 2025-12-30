@@ -1,0 +1,41 @@
+{
+  "name": "cypress-sessao-julgamento",
+  "version": "1.0.1",
+  "description": "Este projeto utiliza o Cypress para automatizar testes de funcionalidades relacionadas a sessões de julgamento. A seguir, você encontrará a estrutura de pastas do projeto e um guia completo para instalação e configuração do Cypress.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "npx standard",
+    "lint:fix": "npx standard --fix",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test": "cypress run --headed",
+    "clean:allure": "rimraf public allure-results",
+    "test:allure:ordem": "npm run clean:allure && cypress run --headed --browser chrome --spec \"cypress/e2e/gui/Callout8_Sprint5-6.cy.js,cypress/e2e/gui/Callout8_Sprint7.cy.js,cypress/e2e/gui/Callout8_Sprint8.cy.js,cypress/e2e/gui/Callout8_Sprint9_1.cy.js,cypress/e2e/gui/Callout8_Sprint9_2.cy.js,cypress/e2e/gui/Callout8_Sprint10.cy.js,cypress/e2e/gui/Callout8_Sprint11.cy.js,cypress/e2e/gui/Callout8_Sprint13.cy.js,cypress/e2e/gui/Callout8_Sprint14.cy.js,cypress/e2e/gui/Callout8_Sprint16.cy.js,cypress/e2e/gui/Callout8_Sprint17.cy.js,cypress/e2e/gui/Callout10_Sprint2-4-6.cy.js,cypress/e2e/gui/Callout13_Sprint2.cy.js\" && npx allure generate allure-results --clean -o public"
+  },
+  "keywords": [],
+  "author": "André Jaeger Scheffer",
+  "license": "ISC",
+  "devDependencies": {
+    "@4tw/cypress-drag-drop": "^2.2.5",
+    "@shelex/cypress-allure-plugin": "^2.41.1",
+    "@testing-library/cypress": "^10.0.2",
+    "allure-commandline": "^2.34.0",
+    "chai": "^5.2.0",
+    "cypress": "^12.17.4",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-plugin-tab": "^1.0.5",
+    "cypress-real-events": "^1.13.0",
+    "cypress-wait-until": "^3.0.2",
+    "eslint": "^9.11.1",
+    "eslint-plugin-cypress": "^3.6.0",
+    "rimraf": "^6.0.1"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.9.0",
+    "cpf-cnpj-validator": "^1.0.3",
+    "cypress-plugin-api": "^2.11.2",
+    "dayjs": "^1.11.13",
+    "node-forge": "^1.3.1",
+    "process": "^0.11.10"
+  }
+}
